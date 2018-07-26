@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-26T08:17:18.303Z</updated>
+  <updated>2018-07-26T12:50:13.920Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/07/26/github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/07/26/github搭建博客教程/</id>
+    <published>2018-07-26T12:50:13.916Z</published>
+    <updated>2018-07-26T12:50:13.920Z</updated>
+    
+    <content type="html"><![CDATA[<p>##github搭建博客指南##</p><p>注意将自己的博客名格式github的用户名.github.io<br>如果之前在GitHub上设置过密钥，需要检验密钥是否可以使用，最好重新添加一个密钥。<br>这里面没有主题设置，过段时间会更新主题配置。</p><p>第一步：安装Node.js并配置好Node.js环境，成功界面为：<br><img src="https://i.imgur.com/8GW2yQB.png" alt=""></p><a id="more"></a><p>第二步：</p><p>下载git速度会很慢，我将我的百度网盘连接放在上面。<a href="https://pan.baidu.com/s/1pj23Fwp2SSHvO8Cqt16tUA" target="_blank" rel="noopener">https://pan.baidu.com/s/1pj23Fwp2SSHvO8Cqt16tUA</a><br>安装git并配置其环境，安装成功的就是再桌面右击鼠标出现下下面界面：<br><img src="https://i.imgur.com/n6VHVx0.png" alt=""></p><p>注意：在使用GIT时，我们一般使用右击鼠标，使用GIT BASH HERE。但是如果要使用命令提示符里面调用GIT，就需要配置电脑环境变量PATH，安装的时候选择USE GIT FROM THE WINDOWS COMMAND PROMPT也可以。同样的配置成功的界面如下：<br><img src="https://i.imgur.com/QmzXygh.png" alt=""></p><p>第三步：</p><p>使用github搭建博客，就必须要有github账户，这个很简单，只需要在github官网上注册就好了。<br>注意：创建项目虽然简单，但是有个格式需要遵守（账户名.github.io),否则的话后期会出现很多事情，很麻烦。并且需要勾选Initialize this repository with a README。图片如下：<br><img src="https://i.imgur.com/rq95QjV.png" alt=""><br>建好项目之后，在右编有一个settings按钮，点击它，拉到github pages的位置，你会看到有个网址，你能够通过它发现你的项目已经被部署到网上了，并且能够通过外网访问它。效果图：<br><img src="https://i.imgur.com/Rv7Gxoz.png" alt=""></p><p>第四步：</p><p>安装hexo，在一个合适的位置创建一个空文件夹，我在e盘先创建了一个blog的空文件夹，e盘较大，使用blog更方便查找。创建完之后我们可以通过命令提示符进入到该文件夹里面。<br><img src="https://i.imgur.com/DMzWcFI.png" alt=""></p><p>然后输入：npm install hexo -g，开始安装（下面的是成功界面，我的已经安装过了，下面是在网上找的图片）<br><img src="https://i.imgur.com/Pw3RrNN.png" alt=""><br>输入hexo -v，检查是否安装成功<br><img src="https://i.imgur.com/THvMRmp.png" alt=""><br>输入hexo init ，初始化（需要等待一段时间)<br><img src="https://i.imgur.com/l67ytUA.png" alt=""><br>当后面出现start bloging with hexo时，就是初始化结束，下面就可以安装组件了。<br>输入npm install，安装组件。<br><img src="https://i.imgur.com/zxsjFq5.png" alt=""><br>输入hexo g，开始体验hexo<br><img src="https://i.imgur.com/YDuGV8o.png" alt=""><br>只要没有红色出现就是没有出错误。<br>输入hexo s开启服务器，可以开始网址。（这个出现的东西可能和你们的不一样，但是最后一行相同就行）<br><img src="https://i.imgur.com/nLYQpNJ.png" alt=""><br>在网页上输入得到的网址，如果出现下情况就是完成了。<br><img src="https://i.imgur.com/FV2FLaU.png" alt=""><br>如果页面无法跳转，可能是端口被占用了。这个时候可以ctrl+c，输入hexo server -p 5000换一个端口使用。</p><p>第五步：</p><p>将hexo与github page连接起来，设置git的user name<br>和email。（用户名和邮箱使用创建github的名字和邮箱）<br><img src="https://i.imgur.com/bVkAs0G.png" alt=""><br><img src="https://i.imgur.com/PGGMItP.png" alt=""><br>输入的时候改一下username和email就好<br>输入cd~/.ssh检查是否有.ssh文件夹<br><img src="https://i.imgur.com/oKGNVoL.png" alt=""><br>输入ls列出文件内容<br><img src="https://i.imgur.com/Kj8pYev.png" alt=""><br>输入ssh-keygen -t rsa -C”邮箱号”,连续三个回车生成密钥，会得到两个文件：id_rsa和id_rsa.pub(默认在C:\Users\Administrator.ssh的位置）。<br><img src="https://i.imgur.com/hIeqn4o.png" alt=""><br>输入eval “$(ssh-agent -s)”，添加密钥到ssh-agent<br><img src="https://i.imgur.com/SGq3W9n.png" alt=""><br>再输入ssh-add ~/.ssh/id_rsa，添加生成的SSH key到ssh-agent<br><img src="https://i.imgur.com/T0Xhja6.png" alt=""><br>然后登陆github，点击头像下的settings，添加ssh。<br><img src="https://i.imgur.com/12MHEW7.png" alt=""><br><img src="https://i.imgur.com/clTM1fh.png" alt=""><br><img src="https://i.imgur.com/E54Z8I9.png" alt=""><br>我的已经输入过了下面是没有输入过的。<br><img src="https://i.imgur.com/Ch85Ig9.png" alt=""><br>输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>,测试添加ssh是否成功。成功了就可以在hi后面看到你的用户名了。<br><img src="https://i.imgur.com/k5KkePQ.png" alt=""><br>注意：如果ssh—key配置失败需要进行如下步骤<br>首先清除所有数据<br>key-pair<br>ssh-add -D<br>rm -r~/.ssh<br>删除在github中的public-key<br>chongxinshengc密钥<br>ssh-keygen -t rsa -C”邮箱”<br>接下来正常操作<br>在github上添加公钥public-key:<br>1、首先在你的终端运行 xclip -sel c ~/.ssh/id_rsa.pub将公钥内容复制到剪切板<br>2、在github上添加公钥时，直接复制即可<br>3、保存</p><p>测试：<br>在终端 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>第六步：<br>配置deployment，在blog（blog是我前面创建的文件夹）文件夹中找到—config.yml，修改repo值（在末尾）<br><img src="https://i.imgur.com/5c7rhhp.png" alt=""><br>repo值是你在github项目里的ssh（右下角）<br><img src="https://i.imgur.com/kWCaBHe.png" alt=""></p><p>第七步：</p><p>新建一篇博客，在cmd命令提示符里面进入到自己的bolg文件输入hexo new post” 博客名”<br><img src="https://i.imgur.com/1MAqXbk.png" alt=""><br>创建完成后在文件夹—posts目录下将会看到已经创建的文件<br><img src="https://i.imgur.com/NIbfYBs.png" alt=""><br>在生成及部署之前，需要安装一个扩展：npm install hexo-deployer-git –save<br><img src="https://i.imgur.com/3FmbUR6.png" alt=""><br>然后就是编辑好文章，就可以使用命令： hexo d -g生成级部署了。<br><img src="https://i.imgur.com/GJegsNR.png" alt=""><br>部署成功后就可以访问你的博客了<br>http://用户名.github.io<br>同样的也可以看到生成的文章。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##github搭建博客指南##&lt;/p&gt;
+&lt;p&gt;注意将自己的博客名格式github的用户名.github.io&lt;br&gt;如果之前在GitHub上设置过密钥，需要检验密钥是否可以使用，最好重新添加一个密钥。&lt;br&gt;这里面没有主题设置，过段时间会更新主题配置。&lt;/p&gt;
+&lt;p&gt;第一步：安装Node.js并配置好Node.js环境，成功界面为：&lt;br&gt;&lt;img src=&quot;https://i.imgur.com/8GW2yQB.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
