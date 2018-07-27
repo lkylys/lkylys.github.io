@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-26T12:50:13.920Z</updated>
+  <updated>2018-07-27T03:21:09.043Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/07/27/ctf%E4%B9%8B%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/07/27/ctf之文件上传问题/</id>
+    <published>2018-07-27T03:21:09.039Z</published>
+    <updated>2018-07-27T03:21:09.043Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CTF训练题总结1"><a href="#CTF训练题总结1" class="headerlink" title="CTF训练题总结1"></a>CTF训练题总结1</h1><p>1，上传文件格式</p><p>在ctf训练体题中会出现一些文件上传的的题目，它的题型也不唯一。</p><a id="more"></a><p>第一种（直接查看源代码）：<br>这种简单的题目，在题的网页上面可以直接按ctrl + f12<br>查看源代码，将文件的格式修改为所需要上传的格式就好。（现在网站打不开，打开了我会上传图片）</p><p>第二种（需要绕过验证）：<br>这种题目顾名思义就是需要绕过题上所给的限制，比如题上让你提交.php格式的文件，但是它又加了个限定，只允许jpg的格式上传成功，例如：<br><img src="https://i.imgur.com/6dy8RsU.png" alt=""><br>需要上传文件，提上要求的是上传php格式的文件，首先我们上传一个php文件试一试。结果如下：<br><img src="https://i.imgur.com/bKculhD.png" alt=""><br>我们再试一下其它的文件，我尝试了一下txt文件，和上面的结果一样，我们再试一下jpg文件：<br><img src="https://i.imgur.com/MybYCUd.png" alt=""><br>发现可以上传成功，也就是说它不限制jpg格式的文件上传，所以，我们就要想办法，让我们传送的文件欺骗它的检测，就是我们传送php格式，而它检测的却是jpg文件，现在我们开始抓包。<br><img src="https://i.imgur.com/7b3DKTd.png" alt=""><br>这是一个php文件上传的抓包结果，我们可以看到我们上传的是php类型，他检测的content-type也是php类型，所以我们提交不成功，那么我们将content-type修改为jpg格式，让它检测出我们提交的是jpg格式那么我们就可以提交了。关于content-type这些知识，大家可以上网搜索一下。<br>这一道题提交jpg格式显示还是不对，但使用jepg格式是对的<br><img src="https://i.imgur.com/phlyDTs.png" alt=""><br>或许是jpg和php都是用appalication所致吧，这个后期问清楚之后我会上传。修改之后就是<br><img src="https://i.imgur.com/sGaEMHF.png" alt=""><br><img src="https://i.imgur.com/FRoVY2x.png" alt=""><br>这就成功了！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CTF训练题总结1&quot;&gt;&lt;a href=&quot;#CTF训练题总结1&quot; class=&quot;headerlink&quot; title=&quot;CTF训练题总结1&quot;&gt;&lt;/a&gt;CTF训练题总结1&lt;/h1&gt;&lt;p&gt;1，上传文件格式&lt;/p&gt;
+&lt;p&gt;在ctf训练体题中会出现一些文件上传的的题目，它的题型也不唯一。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
