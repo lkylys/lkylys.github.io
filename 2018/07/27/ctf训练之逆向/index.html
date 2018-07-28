@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://i.imgur.com/s1xN1vD.png">
 <meta property="og:image" content="https://i.imgur.com/yNNLTvw.png">
 <meta property="og:image" content="https://i.imgur.com/8ESlrq7.png">
-<meta property="og:updated_time" content="2018-07-27T07:14:46.180Z">
+<meta property="og:updated_time" content="2018-07-28T00:41:30.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ctf训练之逆向">
 <meta name="twitter:description" content="第一题：https://pan.baidu.com/s/1ZewvywceSIPI3KnGqbsM4g这是我做的第一道逆向题目。首先这个exe是有问题的，当我们在打开的时候发现会打不开的，我的打开时是这样的提示：上面说让咨询软件发布者，我想我们没办法去找到谁发布的，所以我们就需要修改一下这个软件，再次我们就需要一个软件010editor">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,478
+                  1,663
                 </span>
               
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -438,6 +438,17 @@
 <p>  v31 = 0;<br>  v9 = 1;<br>  v10 = 4;<br>  v11 = 14;<br>  v12 = 10;<br>  v13 = 5;<br>  v14 = 36;<br>  v15 = 23;<br>  v16 = 42;<br>  v17 = 13;<br>  v18 = 19;<br>  v19 = 28;<br>  v20 = 13;<br>  v21 = 27;<br>  v22 = 39;<br>  v23 = 48;<br>  v24 = 41;<br>  v25 = 42;<br>  v26 = 26;<br>  v27 = 20;<br>  v28 = 59;<br>  v29 = 4;<br>  v30 = 0;<br>  printf(“please enter flag:”);<br>  while ( 1 )<br>  {<br>    v6 = getch();<br>    v32[v31] = v6;<br>    if ( !(_BYTE)v6 || v32[v31] == 13 )<br>      break;<br>    if ( v32[v31] == 8 )<br>    {<br>      printf(“\b\b”);<br>      –v31;<br>    }<br>    else<br>    {<br>      printf(“%c”, v32[v31++]);<br>    }<br>  }<br>  v8 = 0;<br>  for ( i = 0; i &lt; 17; ++i )<br>  {<br>    if ( v32[i] != byte_415768[<em>(&amp;v9 + i)] )<br>      v8 = 1;<br>  }<br>  if ( v33 != 49 || v34 != 48 || v35 != 50 || v36 != 52 || v37 != 125 )<br>    v8 = 1;<br>  v32[v31] = 0;<br>  printf(“\r\n”);<br>  if ( v8 )<br>  {<br>    printf(“wrong\n”);<br>    main(v3, v4, v5);<br>  }<br>  else<br>  {<br>    printf(“success\n”);<br>  }<br>  system(“pause”);<br>  HIDWORD(v1) = v0;<br>  LODWORD(v1) = 0;<br>  return v1;<br>}<br>这个主函数的代码有100多行，首先看上面的，全是定义的一些类型。所以我们就可以大致看一下，继续看下面的。<br>接着就是while循环，这是一个无限循环。所以要让这个循环结束的条件就是break，恰好这个程序里面就有一个判断语句<br>if ( !(_BYTE)v6 || v32[v31] == 13 )如果这个语句成立就break，而且如果鼠标点到13，点一下“r“你会发现它会编程/n同样是跳出循环。<br>所以if循环肯定成立。<br>在while循环中，getch（）是我们输入的字符串，所以v6就是我们需要得到的值。<br>下面我们就可以看for循环了，for循环中的byte—415768我们已更改能够看出来它是一个数组或者字符串，所以我们把它点开看一下。<br><img src="https://i.imgur.com/PpAYKem.png" alt=""><br>果然是一个字符串，但是上面的73h一定不要忘记，它也是字符串的一部分，点一下人，将73h的格式转化一下，将会转化为s。<br><img src="https://i.imgur.com/s1xN1vD.png" alt=""><br>然后后看下面的如果成功就要让v8 = 0<br>所以for 循环里面的if语句若果不成立则v8就不会为一，所以我们可以让<br>v32[i] == byte_415768[</em>(&amp;v9 + i)]，所以我们只要求出来byte_415768[<em>(&amp;v9 + i)]我们就求出来了我们需要的答案。
 </em>(&amp;v9 + i)从这个里面我们知道v9所在地址后面的16位地址的值将会是我们需要的，且需要将放在一个数组里面。如何知道他们的的值呢。这个时候上面的信息就有用了。<br>所以我们可以下脚本了，下面就是我的python脚本<br>c =[1,4,14,10,5,36,23,42,13,19,28,13,27,39,48,41,42,26,20,59,4,0]<br>a = ‘sKfxEeft}f{gyrYgthtyhifsjei53UUrrr_t2cdsef66246087138\0087138’<br>for i in range(17):<br>    print(a[c[i]],end =’’)<br>得出来的结果为：KEY{e2s6ry3r5s8f6</p>
 <p>你会发现这个钥匙少了一部分。那么就继续看下面的部分，下面又是一个if判断语句，如果你是一个逆向高手，我想你会发现这些东西其实就是要是的后面部分。按r键转化为assic表就会得到：<br><img src="https://i.imgur.com/yNNLTvw.png" alt=""><br>加在钥匙后面就是KEY{e2s6ry3r5s8f61024}。这就是一个完整的钥匙了下面我们输上去试一试。<br><img src="https://i.imgur.com/8ESlrq7.png" alt=""><br>事实证明答案是对的！</p>
+<p>第二题：</p>
+<p>题目链接（<a href="https://pan.baidu.com/s/1MZu6AL7joa66hp1GApouCA" target="_blank" rel="noopener">https://pan.baidu.com/s/1MZu6AL7joa66hp1GApouCA</a></p>
+<p>这是一道简单的逆向题目，只需要将它在python反编译中反编译一下就能得到主函数。</p>
+<p>#!/usr/bin/env python</p>
+<h1 id="visit-http-tool-lu-pyc-for-more-information"><a href="#visit-http-tool-lu-pyc-for-more-information" class="headerlink" title="visit http://tool.lu/pyc/ for more information"></a>visit <a href="http://tool.lu/pyc/" target="_blank" rel="noopener">http://tool.lu/pyc/</a> for more information</h1><p>import base64</p>
+<p>def encode(message):<br>    s = ‘’<br>    for i in message:<br>        x = ord(i) ^ 32<br>        x = x + 16<br>        s += chr(x)</p>
+<pre><code>return base64.b64encode(s)
+</code></pre><p>correct = ‘XlNkVmtUI1MgXWBZXCFeKY+AaXNt’<br>flag = ‘’<br>print ‘Input flag:’<br>flag = raw_input()<br>if encode(flag) == correct:<br>    print ‘correct’<br>else:<br>    print ‘wrong’</p>
+<p>然后我们就开始分析代码。这单体代码也很简单，我就不详细分析了，从尾部开始向上分析写出代码即可。<br>最后的代码为：</p>
+<p>flag = []<br>s = ‘^SdVkT#S ]`Y!^)ism’<br>for i in s:<br>    i = ord(i)<br>    i = i - 16<br>    x = i ^ 32<br>    flag.append(chr(x))<br>for i in flag:<br>    print(i,end =’’)</p>
+<p>结果为：nctf{d3c0mpil1n9_PyC}</p>
 
       
     </div>
@@ -566,8 +577,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -620,6 +640,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#visit-http-tool-lu-pyc-for-more-information"><span class="nav-number">1.</span> <span class="nav-text">visit http://tool.lu/pyc/ for more information</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
