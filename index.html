@@ -419,37 +419,15 @@
 
       
         
-          
-            <h1 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h1><p>题上的要求是，给了一个txt文件，里面有一些文字，要求我们读取出里面的文字，我们需要输入一句话，如果我们是所输入的话中存在文件中的那些字符，那么那个字就要变成*输出，不是的话就不变化输出。<br>下面是我所做的txt中的文字：<br><strong><br>黑产，<br>网马，<br>暗链，<br>挖矿，
+          <h1 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h1><p>题上的要求是，给了一个txt文件，里面有一些文字，要求我们读取出里面的文字，我们需要输入一句话，如果我们是所输入的话中存在文件中的那些字符，那么那个字就要变成*输出，不是的话就不变化输出。<br>下面是我所做的txt中的文字：<br><strong><br>黑产，<br>网马，<br>暗链，<br>挖矿，
 </strong></p>
-<p>第一:如何读取文件里面的内容，并将整合成一串字符或者list。并且文件里面有“，”和换行“\n”，我就想如何将它们去。<br>第二：我看到这个题，首先我想到就是使用两个循环，遍历特殊字符对输入的每一个字符都要做比较。</p>
-<p>解决掉这两个问题其他就简单了。</p>
-<p>第一个问题：</p>
-<pre><code>import sys
-m = []
-print(&quot;请输入一段话：&quot;)
-n = input()
-with open(&quot;C:/Users/李浴淑/Desktop/filter.txt&quot;,&quot;r&quot;)as x :
-s = x.read()
-for i in s:
-if i == &quot;\n&quot; or i == &quot;，&quot;:
-pass
-else:
-m.append(i)
-</code></pre><p>首先我创建一个空list留着存放去掉换行和“，”的字符，接着就是读取txt文件，然后遍历txt文件内容，将不是换行和“，”的东西存放在已经准备好的空list中。</p>
-<p>第二个问题：</p>
-<pre><code>for i in n:
-for j in m:
-s = 0
-if i == j:
-print(&quot;*&quot;,end = &apos;&apos;)
-s += 1
-break
-if s == 0:
-print(i,end = &apos;&apos;)
-</code></pre><p>将我们输入的内容和列表中的内容对比，相同则输出“*”<br>这两个循环顺寻不能换，必须是输入的每一个字符都要和list中的所有元素作比较。也就是遍历list对输入的每一个字符。代码中第一个判断是判断，两个字符是否相等，第二个是判断，相等的字符手否需要二次输出。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/31/python特殊字符/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
