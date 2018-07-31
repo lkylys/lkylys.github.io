@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://i.imgur.com/s1xN1vD.png">
 <meta property="og:image" content="https://i.imgur.com/yNNLTvw.png">
 <meta property="og:image" content="https://i.imgur.com/8ESlrq7.png">
-<meta property="og:updated_time" content="2018-07-28T00:41:30.540Z">
+<meta property="og:updated_time" content="2018-07-28T02:15:23.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ctf训练之逆向">
 <meta name="twitter:description" content="第一题：https://pan.baidu.com/s/1ZewvywceSIPI3KnGqbsM4g这是我做的第一道逆向题目。首先这个exe是有问题的，当我们在打开的时候发现会打不开的，我的打开时是这样的提示：上面说让咨询软件发布者，我想我们没办法去找到谁发布的，所以我们就需要修改一下这个软件，再次我们就需要一个软件010editor">
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,663
+                  1,671
                 </span>
               
 
@@ -449,6 +449,8 @@
 <p>然后我们就开始分析代码。这单体代码也很简单，我就不详细分析了，从尾部开始向上分析写出代码即可。<br>最后的代码为：</p>
 <p>flag = []<br>s = ‘^SdVkT#S ]`Y!^)ism’<br>for i in s:<br>    i = ord(i)<br>    i = i - 16<br>    x = i ^ 32<br>    flag.append(chr(x))<br>for i in flag:<br>    print(i,end =’’)</p>
 <p>结果为：nctf{d3c0mpil1n9_PyC}</p>
+<p>第三道题：</p>
+<p>题目链接（</p>
 
       
     </div>
@@ -526,6 +528,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/31/python特殊字符/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -606,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
