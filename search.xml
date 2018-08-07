@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title>黑客通关游戏</title>
+      <link href="/2018/08/07/%E9%BB%91%E5%AE%A2%E9%80%9A%E5%85%B3%E6%B8%B8%E6%88%8F/"/>
+      <url>/2018/08/07/%E9%BB%91%E5%AE%A2%E9%80%9A%E5%85%B3%E6%B8%B8%E6%88%8F/</url>
+      <content type="html"><![CDATA[<p>HTTP://WWW.CN-HACK.CN/QS/5.HTM 黑客游戏通关网址</p><p>这套题总共分为五关：</p><p>第一关：</p><p><img src="https://i.imgur.com/tMqffiT.png" alt=""><br>遇见这些简单的题，我们可以先随便输入一下看一下结果，结果发现什么也没有，不要着急。第二步往往是查看源代码，右击鼠标我们发现不可以查看源代码，所以我们可以使用fn+f12来查看。<br>在查看源代码中，我们会发现这些代码，如果找到就证明我们没有找错位置。</p><p>function PassConfirm() {<br>var x=document.password.pass.value<br>if (x==”go    “) {<br>alert(“恭喜您，答对了，进入第二关！”)<br>window.open(“2sdfadf.htm”,”_self”) }<br>else {<br>alert(“别灰心，再试一次!”)<br>window.open(“error.asp”,”_self”) }<br>}</p><p>找到他们我们就几乎找到了答案，但是答案并不知go  而是打开2sdfadf.htm，在原网页的url改为2sdfadf.htm。这样就进入了第二关。</p><p>第二关：</p><p><img src="https://i.imgur.com/eNg9lEz.png" alt=""><br>进入第二关，根据提示，我们知道答案跟图片有关，所以我们将图片下载到电脑上查看。<br>在电脑打开图片发现知识一张简单的图片，但是我们将它的格式修改为txt格式，打开后仔细观查，细心的话你会发现我们所需要的答案。答案就在里面。</p><p><img src="https://i.imgur.com/qNUhkrp.png" alt=""></p><p>同样的这个答案也是将原网页的url修改为or3.htm即可。</p><p>第三关：</p><p>第三关是最简单的，直接让你url解密即可，机密出来之后就是第四关的答案。<br><a href="http://www.cn-hack.cn/qs/4dfsa.htm" target="_blank" rel="noopener">http://www.cn-hack.cn/qs/4dfsa.htm</a></p><p>第四关：</p><p>第四关又是一个输入密码账号的问题，看着比第一关难，不要慌，首先我们随便输入试一下，在查看一下源代码1，结果会让你眼前一亮，答案居然出现了，很惊喜，但有时候看着很难的题答案往往在你想不到的地方。</p><p><img src="https://i.imgur.com/UqAjZ7T.png" alt=""></p><p>答案显而易见就是把原网页的url改为789.htm</p><p>第五关：</p><p><img src="https://i.imgur.com/He9ae34.png" alt=""></p><p>它的提示是通用密码中的两个字母，于是我就在百度上查通用密码是什么，结果没找到，后来一个同学让我看一下sql通用密码，发现了or是的，我就尝试着在上面输入or，结果发现是正确的。事实证明有时候不会的还是需要问度娘的。</p><p><img src="https://i.imgur.com/XGeMeDg.png" alt=""></p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title></title>
       <link href="/2018/07/31/python%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/"/>
       <url>/2018/07/31/python%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/</url>
